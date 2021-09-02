@@ -9,4 +9,17 @@ function getSessions (id) {
     return axios(`https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/movies/${id}/showtimes`)
 }
 
-export {getFilms,getSessions};
+function getSeats (id) {
+    return axios(`https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/showtimes/${id}/seats`)
+}
+
+function postReservation (reservation) {
+    console.log(reservation)
+    return axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/seats/book-many', {
+        ids: reservation.seats,
+        name: reservation.buyerName,
+        cpf: reservation.buyerCpf
+    })
+}
+
+export {getFilms,getSessions,getSeats,postReservation};
