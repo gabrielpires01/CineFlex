@@ -1,0 +1,19 @@
+/*Header*/
+header {
+    background-color: #C3CFD9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+header h1 {
+    font-size: 40px;
+    color: #E8833A;
+    padding: 10px 0;
+}
+
+/* Films Section*/
+
