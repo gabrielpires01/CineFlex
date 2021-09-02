@@ -8,9 +8,6 @@ import UserData from "./UserData";
 
 export default function Seats () {
     const {id} = useParams();
-
-    const history = useHistory()
-    const {date} = history.location.state;
     const [session, setSession] = useState({})
     const [seats, setSeats] = useState([])
     const [selectedIds, setSelectedIds] = useState([])
@@ -50,7 +47,7 @@ export default function Seats () {
                         <p>Ocupado</p>
                     </div>
                 </div>
-                <UserData selectedSeats={selectedIds} film={session} date={date}/>
+                <UserData selectedSeats={selectedIds} film={session} day={session.day}/>
             </div>
             {/*<Footer film={session.movie}*/}
         </>

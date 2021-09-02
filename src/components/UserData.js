@@ -4,15 +4,15 @@ import { postReservation } from "./Api";
 
 export default function UserData (props) {
 
-    const {selectedSeats,film,date} = props;
-    console.log(film)
+    const {selectedSeats,film,day} = props;
+    
     const [state, setState] = useState({
         buyerName: "",
         buyerCpf: "",
         seats: selectedSeats,
         film: film.movie,
         hour: film.name,
-        date
+        date: (day && day.date) ? day.date : ''
     })
 
     useEffect(() => {
@@ -21,10 +21,11 @@ export default function UserData (props) {
             seats: selectedSeats,
             film:film.movie,
             hour: film.name,
-            date:date
+            date: (day && day.date) ? day.date : ''
         }))
+        console.log(film.day)
         console.log(state)
-    },[selectedSeats,film,date])
+    },[selectedSeats,film])
 
     function handleChange (e) {
         const target = e.target;
@@ -35,7 +36,7 @@ export default function UserData (props) {
                 buyerName: value,
                 film:film.movie,
                 hour: film.name,
-                date:date
+                date: (day && day.date) ? day.date : ''
             }))
         } else {
             setState(prevState => ({
@@ -43,7 +44,7 @@ export default function UserData (props) {
                 buyerCpf: value,
                 film:film.movie,
                 hour: film.name,
-                date:date
+                date: (day && day.date) ? day.date : ''
             }))
         }
     }
