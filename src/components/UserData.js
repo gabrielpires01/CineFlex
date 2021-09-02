@@ -23,8 +23,6 @@ export default function UserData (props) {
             hour: film.name,
             date: (day && day.date) ? day.date : ''
         }))
-        console.log(film.day)
-        console.log(state)
     },[selectedSeats,film])
 
     function handleChange (e) {
@@ -33,18 +31,12 @@ export default function UserData (props) {
         if (target.name === 'name') {
             setState(prevState => ({
                 ...prevState,
-                buyerName: value,
-                film:film.movie,
-                hour: film.name,
-                date: (day && day.date) ? day.date : ''
+                buyerName: value
             }))
         } else {
             setState(prevState => ({
                 ...prevState,
-                buyerCpf: value,
-                film:film.movie,
-                hour: film.name,
-                date: (day && day.date) ? day.date : ''
+                buyerCpf: value
             }))
         }
     }

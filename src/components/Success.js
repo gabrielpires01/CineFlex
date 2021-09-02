@@ -13,7 +13,6 @@ export default function Success (props) {
             <div className='list'>
                 <div>
                     <h3>Filme e sessão</h3>
-                    {console.log(film)}
                     <p>{film.title}</p>
                     <p>{date} {hour}</p>
                 </div>

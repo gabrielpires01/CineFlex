@@ -14,7 +14,6 @@ function getSeats (id) {
 }
 
 function postReservation (reservation) {
-    console.log(reservation)
     return axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/seats/book-many', {
         ids: reservation.seats,
         name: reservation.buyerName,
