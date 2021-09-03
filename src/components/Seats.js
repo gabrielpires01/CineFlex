@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getSeats } from "./Api";
 import Footer from "./Footer";
 import Seat from "./Seat";
@@ -49,7 +49,6 @@ export default function Seats () {
                 </div>
                 <UserData selectedSeats={selectedIds} film={session} day={session.day}/>
             </div>
-            {console.log(session)}
             <Footer film={session.movie} session={session} />
         </>
     )
