@@ -49,7 +49,8 @@ export default function Seats () {
                 </div>
                 <UserData selectedSeats={selectedIds} film={session} day={session.day}/>
             </div>
-            {/*<Footer film={session.movie}*/}
+            {console.log(session)}
+            <Footer film={session.movie} session={session} />
         </>
     )
 }
